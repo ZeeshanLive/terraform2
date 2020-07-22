@@ -27,6 +27,9 @@ resource "aws_eip" "ip" {
     instance = aws_instance.example.id
 }
 
+resource "aws_eip" "ip1" {
+    vpc = true
+}
 output "ip" {
   value = aws_eip.ip.public_ip
 }
